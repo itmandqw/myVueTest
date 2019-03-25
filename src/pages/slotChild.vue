@@ -1,6 +1,6 @@
 <template>
   <div class="child">
-    <h3>这里是子组件</h3>
+    <h3>这里是子组件1</h3>
     <slot v-bind:data="data"></slot>
   </div>
 </template>
