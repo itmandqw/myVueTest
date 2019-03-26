@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <select v-model="language" @change="changeLang">
+      <option value="zh">简体中文</option>
+      <option value="en">English</option>
+    </select>
+    <p>{{ $t('m.myMusic') }}</p>
   </div>
 </template>
 
@@ -9,7 +13,20 @@ export default {
   name: 'MyTest',
   data () {
     return {
-      msg: '养老金是我们。。。'
+      language: 'zh'
+    }
+  },
+  methods: {
+    changeLang () {
+      console.log(this.language)
+      if (this.language === 'zh') {
+        this.language = 'zh'
+        this.$i18n.locale = this.language // 中文
+        console.log('当前语言', this.$i18n.locale)
+      } else {
+        this.language = 'en'
+        this.$i18n.locale = this.language // 外文
+      }
     }
   }
 }

@@ -21,21 +21,6 @@ export default {
       name1: '我是父组件原本的数据',
       name2: '我是父组件原本的数据',
       vuexValue: 'balabal'
-      // parentMessage: "我是你爸爸传过来的数据"
-      // productList: [
-      //   {
-      //     title: '60岁以上退休老人福利',
-      //     content: 'balabblabblalbla'
-      //   },
-      //   {
-      //     title: '70岁以上退休老人福利',
-      //     content: 'balabblabblalbla'
-      //   },
-      //   {
-      //     title: '80岁以上退休老人福利',
-      //     content: 'balabblabblalbla'
-      //   }
-      // ]
     }
   },
   methods: {

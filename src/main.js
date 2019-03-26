@@ -5,42 +5,27 @@ import App from './App'
 import router from './router'
 import 'es6-promise/auto'
 import Vuex from 'vuex'
+import VueI18n from 'vue-i18n'
 
 Vue.use(Vuex)
+Vue.use(VueI18n)
 
 Vue.config.productionTip = false
+
+const i18n = new VueI18n({
+  locale: 'zh', // 语言标识
+  // this.$i18n.locale // 通过切换locale的值来实现语言切换
+  messages: {
+    'zh': require('./common/lang/zh'), // 中文语言包
+    'en': require('./common/lang/en') // 英文语言包
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  // data () {
-  //   return {
-  //     count: 1
-  //   }
-  // },
   router,
+  i18n,
   components: { App },
   template: '<App/>'
-  // methods: {
-  //   increment () {
-  //     this.count++
-  //   }
-  // }
 })
-// console.log(vue)
-// const store = new Vuex.Store({
-//   state: {
-//     count: 1
-//   },
-//   mutations: {
-//     increment (state) {
-//       state.count++
-//     }
-//   }
-// })
-
-// console.log('store', store)
-
-// store.commit('increment')
-
-// console.log('dasdasa', store.state.count)
