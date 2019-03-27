@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import {getAddress} from '../request/api'
+
 export default {
   name: 'MyTest',
   data () {
@@ -28,6 +30,16 @@ export default {
         this.$i18n.locale = this.language // 外文
       }
     }
+  },
+  mounted () {
+    getAddress({
+      type: 0,
+      sort: 1
+    }).then((res) => {
+      console.log('success', res)
+    }).catch((res) => {
+      console.log('err', res)
+    })
   }
 }
 </script>
